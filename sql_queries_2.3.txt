@@ -1,0 +1,22 @@
+select city,
+count(distinct order_id) as number_orders,
+sum(sales) as revenue
+from public.orders o
+where category in ('Furniture','Technology')
+group by city
+having sum(sales) > 10000
+order by revenue desc;
+
+select count(*), count(distinct orders.order_id) from orders inner join returns on orders.order_id = returns.order_id
+---9994 rows
+---3226 rows inner
+
+select count(*), 
+count(distinct orders.order_id) 
+from orders where order_id in (select distinct order_id from returns)
+
+SELECT DATE(SUBSTRING('2018-07-25 10:30:30' FROM 1 FOR 5));
+
+select * from orders left join returns on orders.order_id=returns.order_id;
+
+select sum(profit) from orders
