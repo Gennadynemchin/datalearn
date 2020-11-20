@@ -1,5 +1,14 @@
 # Комментарии к модулю 2
 
+## Модуль 2.3
+
+В файлах orders.sql, people.sql, returns.sql находится код для создания таблиц на основе данных из файла интернет-магазина из Sample - Superstore.xls. Все работы выполнялись в
+PostgreSQL через PgAdmin 4.26 локально.
+
+
+## Модуль 2.4
+
+
 Модель базы данных, разработанная через sqldbm.com:
 
 ![Model of store data](https://github.com/Gennadynemchin/datalearn/blob/main/module_2/dimensional_model.png)
@@ -29,5 +38,4 @@ join dim.products_dim p on o.product_id = p.product_id_1 and p.product_name = o.
 join dim.orders_dim on o.order_id = dim.orders_dim.order_id
 ```
 
-
-!Дописать модуль и добавить 2.3!
+В коде выше: выбираем необходимые нам колонки (уникальные, чтобы не было повторений) из таблицы public.orders и наших таблиц-словарей, производя inner join между public.orders и таблицами-словарями. 
