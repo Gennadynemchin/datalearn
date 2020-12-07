@@ -45,6 +45,19 @@ join dim.orders_dim on o.order_id = dim.orders_dim.order_id
 
 Создание схемы для этого дашборда находится в директории 2.5: stg_orders.sql, from_stg_to_dw.sql
 
+Запрос для формирования данных дашборда:
+
+
+```sql
+select * from dw.sales_fact as sf
+inner join dw.shipping_dim sd on sf.ship_id=sd.ship_id
+inner join dw.geo_dim g on sf.geo_id=g.geo_id
+inner join dw.product_dim p on sf.prod_id=p.prod_id
+inner join dw.customer_dim cd on sf.cust_id=cd.cust_id
+inner join dw.calendar_dim cal on sf.order_date_id=cal.dateid
+```
+
+
 Ссылка на дашбоард:
 
 https://datastudio.google.com/reporting/314e9e7f-ea5b-4f33-9764-e02bb6510871
