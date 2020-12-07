@@ -39,3 +39,16 @@ join dim.orders_dim on o.order_id = dim.orders_dim.order_id
 ```
 
 В коде выше: выбираем необходимые нам колонки (уникальные, чтобы не было повторений) из таблицы public.orders и наших таблиц-словарей, производя inner join между public.orders и таблицами-словарями. 
+
+
+## Модуль 2.6(2.5)
+
+Создание схемы для этого дашборда находится в директории 2.5: stg_orders.sql, from_stg_to_dw.sql
+
+Ссылка на дашбоард:
+
+https://datastudio.google.com/reporting/314e9e7f-ea5b-4f33-9764-e02bb6510871
+
+
+![Screenshot of Dashboard](https://github.com/Gennadynemchin/datalearn/blob/main/module_2/2.5/Dashboard_Homework.jpg)
+
