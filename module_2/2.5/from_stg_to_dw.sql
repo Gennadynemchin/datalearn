@@ -92,7 +92,7 @@ where city = 'Burlington'  and postal_code is null;
 
 
 select * from dw.geo_dim
-where city = 'Burlington'
+where city = 'Burlington';
 
 
 
@@ -206,7 +206,7 @@ from stg.orders o
 inner join dw.shipping_dim s on o.ship_mode = s.shipping_mode
 inner join dw.geo_dim g on o.postal_code = g.postal_code and g.country=o.country and g.city = o.city and o.state = g.state --City Burlington doesn't have postal code
 inner join dw.product_dim p on o.product_name = p.product_name and o.segment=p.segment and o.subcategory=p.sub_category and o.category=p.category and o.product_id=p.product_id 
-inner join dw.customer_dim cd on cd.customer_id=o.customer_id and cd.customer_name=o.customer_name 
+inner join dw.customer_dim cd on cd.customer_id=o.customer_id and cd.customer_name=o.customer_name;
 
 
 --do you get 9994rows?
